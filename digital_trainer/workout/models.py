@@ -3,22 +3,25 @@ from django.db import models
 
 # Create your models here.
 class Movement(models.Model):
-    BEGGINER = 'BEG'
+    BEGINNER = 'BEG'
     INTERMEDIATE = 'INT'
     ADVANCED = 'ADV'
     DIFFICULTY_CHOICES = [
-            (BEGGINER, 'Begginer'),
+            (BEGINNER, 'Beginner'),
             (INTERMEDIATE, 'Intermediate'),
             (ADVANCED, 'Advanced'),
     ]
     name = models.CharField(max_length=256)
-    description = models.TextField
+    description = models.CharField(max_length=2048)
     video = models.URLField(max_length=1024)
     difficulty = models.CharField(
             max_length=3,
             choices=DIFFICULTY_CHOICES,
             default=INTERMEDIATE,
     )
+    def __str__(self):
+        return self.name
+
 
 
 class Exercise(models.Model):
@@ -32,7 +35,13 @@ class Exercise(models.Model):
     work_ratio = models.IntegerField()
     rest_ratio = models.IntegerField()
 
+    def __str__(self):
+        return self.name
 
 class Workout(models.Model):
     name = models.CharField(max_length=512)
     exercises = models.ManyToManyField(Exercise)
+
+    def __str__(self):
+        return self.name
+

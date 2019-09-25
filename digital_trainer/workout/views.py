@@ -15,4 +15,12 @@ class MovementDetailView(generic.DetailView):
         """
         return Movement.objects.all()
 
+class MovementListView(generic.ListView):
+    model = Movement
+    template_name = 'workout/movement_list.html'
 
+    def get_queryset(self):
+        """
+        All Movements
+        """
+        return Movement.objects.all()
