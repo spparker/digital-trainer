@@ -1,8 +1,8 @@
 from django.db import models
-
+from polymorphic.models import PolymorphicModel
 
 # Create your models here.
-class Movement(models.Model):
+class Movement(PolymorphicModel):
     BEGINNER = 'BEG'
     INTERMEDIATE = 'INT'
     ADVANCED = 'ADV'
@@ -19,10 +19,22 @@ class Movement(models.Model):
             choices=DIFFICULTY_CHOICES,
             default=INTERMEDIATE,
     )
+    #TODO: Intensity needs to be inside a persons scheduled workout
+    #intensity = models.IntegerField(max = 100) #percent effort / speed
     def __str__(self):
         return self.name
 
+class ConditioningMovement(Movement):
+    bytime = models.BooleanField() # by time?
+    value = models.IntegerField() #seconds or meters
 
+    def __str__(self):
+        if self.bytime():
+            return "Conditioning Movement: " + self.name + " for " + self.value
+            + "seconds"
+        else:
+            return "Conditioning Movement: " + self.name + " " + self.value 
+            + "meters"
 
 class Exercise(models.Model):
     name = models.CharField(max_length=512)
