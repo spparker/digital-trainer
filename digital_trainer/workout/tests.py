@@ -36,7 +36,25 @@ def setUp(self):
                             difficulty=Movement.INTERMEDIATE,
                             video="")
 
+    mo = [Movement.objects.create(name="200m Sprint", description="Running near"
+                                 "top speed for 200 meters.",
+                                 difficulty=Movement.BEGINNER,
+                                 video="")]
+
     Movement.objects.create(name="Change Direction", description="Plant and"
                            "change direction", difficulty=Movement.INTERMEDIATE,
                            video="")
 
+    e = Exercise.objects.create(name="200m Repeats", description="multiple 200s",
+                            sets = 2, reps = 4,
+                            rep_rest_absolute = False,
+                            work_ratio = 1, rest_ratio = 3, set_rest = 180)
+    e.movements.set(mo)
+
+    e = Exercise.objects.create(name="200m Repeats fixed rest",
+                            description="multiple 200s",
+                            sets = 1, reps = 6,
+                            rep_rest_absolute = True,
+                            absolute_rep_rest = 30,
+                            set_rest = 0)
+    e.movements.set(mo)

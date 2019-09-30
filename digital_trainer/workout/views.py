@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views import generic
 
-from .models import Movement, Exercise, Workout
+from .models import Movement, Exercise, Module
 
 # Full Details for a Movement
 class MovementDetailView(generic.DetailView):
@@ -24,3 +24,23 @@ class MovementListView(generic.ListView):
         All Movements
         """
         return Movement.objects.all()
+
+class ExerciseDetailView(generic.DetailView):
+    model = Exercise
+    template_name = 'workout/exercise_detail.html'
+
+    def get_queryset(self):
+        """
+        All the exercises
+        """
+        return Exercise.objects.all()
+
+class ExerciseListView(generic.ListView):
+    model = Exercise
+    template_name = 'workout/exercise_list.html'
+
+    def get_queryset(self):
+        """
+        All Exercises
+        """
+        return Exercise.objects.all()

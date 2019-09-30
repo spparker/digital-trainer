@@ -1,0 +1,12 @@
+<h1>Movements</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<ul>
+{% for exercise in exercise_list %}
+<li><a href="/workout/exercise/{{exercise.id}}/">{{ exercise.name }}</a></li>
+{% empty %}
+	<li>No exercises yet.</li>
+{% endfor %}
+</ul>
+
+<p>{{ exercise.description }}</p>

@@ -27,20 +27,24 @@ class Movement(models.Model):
 class Exercise(models.Model):
     name = models.CharField(max_length=512)
     movements = models.ManyToManyField(Movement)
+    description = models.CharField(max_length=2048)
     sets = models.IntegerField()
-    set_rest = models.IntegerField() #seconds
+    set_rest = models.IntegerField(default=0) #seconds
     reps = models.IntegerField()
     rep_rest_absolute = models.BooleanField()
-    absolute_rep_rest = models.IntegerField() #seconds
-    work_ratio = models.IntegerField()
-    rest_ratio = models.IntegerField()
+    absolute_rep_rest = models.IntegerField(default=None, blank=True,
+                                            null=True) #seconds
+    work_ratio = models.IntegerField(default=None, blank=True, null=True)
+    rest_ratio = models.IntegerField(default=None, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
-class Workout(models.Model):
+
+class Module(models.Model):
     name = models.CharField(max_length=512)
     exercises = models.ManyToManyField(Exercise)
+    description = models.CharField(max_length=2048)
 
     def __str__(self):
         return self.name
