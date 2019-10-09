@@ -1,0 +1,10 @@
+<h1>Modules</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<ul>
+{% for module in module_list %}
+<li><a href="/workout/module/{{module.id}}/">{{ module.name }}</a></li>
+{% empty %}
+	<li>No modules yet.</li>
+{% endfor %}
+</ul>

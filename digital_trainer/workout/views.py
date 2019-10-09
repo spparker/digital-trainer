@@ -44,3 +44,18 @@ class ExerciseListView(generic.ListView):
         All Exercises
         """
         return Exercise.objects.all()
+
+class ModuleDetailView(generic.DetailView):
+    model = Module
+    template_name = 'workout/module_detail.html'
+
+    def get_queryset(self):
+        return Module.objects.all()
+
+class ModuleListView(generic.ListView):
+    model = Module
+    template_name = 'workout/module_list.html'
+
+    def get_queryset(self):
+        return Module.objects.all()
+

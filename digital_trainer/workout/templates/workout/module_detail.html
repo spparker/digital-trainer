@@ -1,0 +1,12 @@
+<h1>{{ module.name }}</h1>
+<h3>{{ module.description }}</h3>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% for exercise in module.exercise.all %}
+	<h4>{{ exercise.name }}</h4>
+	{{ exercise.description }}
+	{% empty %}
+	<p> "No modules yet"</p>
+{% endfor %}
+

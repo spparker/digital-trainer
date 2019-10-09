@@ -19,4 +19,8 @@ urlpatterns = [
         ## ex: /workout/exercise/2
         path('exercise/<int:pk>/', views.ExerciseDetailView.as_view(),
              name='exercise_detail'),
+        path('module/<int:pk>/', views.ModuleDetailView.as_view(),
+             name='module_detail'),
+        path('module/', views.ModuleListView.as_view(),
+             name='module_list'),
 ]

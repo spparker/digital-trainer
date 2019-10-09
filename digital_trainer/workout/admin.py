@@ -4,6 +4,7 @@ from .models import Movement, Exercise, Module
 
 admin.site.register(Movement)
 admin.site.register(Exercise)
+admin.site.register(Module)
 
 #class MovementChildAdmin(PolymorphicChildModelAdmin):
 #    base_model = Movement
