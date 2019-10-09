@@ -1,6 +1,10 @@
-<h1>{{ movement.name }}</h1>
-<h3>{{ movement.difficulty }}</h3>
+<h1>Movements</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<p>{{ movement.description|safe }}</p>
+{% for movement in movement_list %}
+<li><a href="/workout/movement/{{movement.id}}/">{{ movement.name }}</a></li>
+{% empty %}
+	<li>No movements yet.</li>
+{% endfor %}
+</ul>
