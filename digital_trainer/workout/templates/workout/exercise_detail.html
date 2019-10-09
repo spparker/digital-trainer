@@ -10,8 +10,8 @@
 	<p> "No movements yet"</p>
 {% endfor %}
 {{ exercise.sets }}x{{exercise.reps }}
-{% if exercise.rep_rest_absolute %}
-	<p>Rest between reps {{ exercise.absolute_rep_rest }} seconds</p>
+{% if exercise.rep_rest < -1 %}
+	<p>Rest between reps {{ exercise.rep_rest }} seconds</p>
 {% else %}
 	<p>Work to rest ratio- {{ exercise.work_ratio }}:{{ exercise.rest_ratio }} </p>
 {% endif %}
