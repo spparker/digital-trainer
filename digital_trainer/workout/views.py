@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.views import generic
 
 from .models import Movement, Exercise, Module
+from .serializers import MovementSerializer, ExerciseSerializer, ModuleSerializer
+from rest_framework import generics
 
 # Full Details for a Movement
 class MovementDetailView(generic.DetailView):
@@ -24,6 +26,18 @@ class MovementListView(generic.ListView):
         All Movements
         """
         return Movement.objects.all()
+
+class MovementListCreate(generics.ListCreateAPIView):
+    queryset = Movement.objects.all()
+    serializer_class = MovementSerializer
+
+class ExerciseListCreate(generics.ListCreateAPIView):
+    queryset = Exercise.objects.all()
+    serializer_class = ExerciseSerializer
+
+class ModuleListCreate(generics.ListCreateAPIView):
+    queryset = Module.objects.all()
+    serializer_class = ModuleSerializer
 
 class ExerciseDetailView(generic.DetailView):
     model = Exercise

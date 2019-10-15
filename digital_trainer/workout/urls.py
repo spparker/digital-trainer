@@ -23,4 +23,8 @@ urlpatterns = [
              name='module_detail'),
         path('module/', views.ModuleListView.as_view(),
              name='module_list'),
+        ## API
+        path('api/movement/', views.MovementListCreate.as_view() ),
+        path('api/exercise/', views.ExerciseListCreate.as_view() ),
+        path('api/module/', views.ModuleListCreate.as_view() ),
 ]
