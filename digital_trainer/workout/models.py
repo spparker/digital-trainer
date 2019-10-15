@@ -12,6 +12,7 @@ class Movement(models.Model):
             (INTERMEDIATE, 'Intermediate'),
             (ADVANCED, 'Advanced'),
     ]
+    unilateral = models.BooleanField(default=False)
     name = models.CharField(max_length=256)
     description = models.CharField(max_length=2048)
     video = models.URLField(max_length=1024, default=None, blank=True,
