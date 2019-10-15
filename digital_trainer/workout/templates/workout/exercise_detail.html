@@ -3,13 +3,16 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
+
+
 {% for movement in exercise.movements.all %}
 	<h4>{{ movement.name }}</h4>
 	{{ movement.description }}
 	{% empty %}
 	<p> "No movements yet"</p>
 {% endfor %}
-{{ exercise.sets }}x{{exercise.reps }}
+<p>Rep Length = {{exercise.rep_length}}<br>
+{{ exercise.sets }}x{{exercise.reps }}</p>
 {% if exercise.rep_rest < -1 %}
 	<p>Rest between reps {{ exercise.rep_rest }} seconds</p>
 {% else %}
