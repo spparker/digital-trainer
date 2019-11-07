@@ -1,0 +1,13 @@
+[
+	{
+		"model": "workout.movement",
+		"pk": 1,
+		"fields": {
+			"name": "Back Squat",
+			"description": "Squat loaded on traps",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	}
+]
