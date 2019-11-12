@@ -1,5 +1,5 @@
 from django.test import TestCase
-from workout.models import Movement, Exercise, Workout
+from workout.models import Movement, Exercise, Module
 
 # Create your tests here.
 
