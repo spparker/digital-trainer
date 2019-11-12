@@ -10,6 +10,7 @@
     "@babel/preset-react": "^7.7.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "cypress": "^3.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -18,6 +19,8 @@
     "webpack-cli": "^3.3.10"
   },
   "scripts": {
+    "flush": "python ./digital_trainer/manage.py flush --no-input",
+    "e2e": "cypress open --project ./digital_trainer/frontend/",
     "dev": "webpack --mode development ./digital_trainer/frontend/src/index.js --output ./digital_trainer/frontend/static/frontend/main.js",
     "build": "webpack --mode production ./digital_trainer/frontend/src/index.js --output ./digital_trainer/frontend/static/frontend/main.js"
   },
