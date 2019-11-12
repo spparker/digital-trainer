@@ -31,4 +31,9 @@ describe("Django REST framework / React quickstart app", () => {
     cy.get("form").submit();
   });
   // more tests here
+  it("should be able to see the table", () => {
+	  cy.visit("/");
+
+	  cy.get("tr").contains(`${movement.name}${movement.description}${movement.video}${movement.unilateral}`);
+  });
 });
