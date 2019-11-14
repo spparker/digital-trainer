@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-class Form extends Component {
+class MovementForm extends Component {
 	static propTypes = {
 		endpoint: PropTypes.string.isRequired
 	};
@@ -93,6 +93,6 @@ class Form extends Component {
 	}
 }
 
-export default Form;
+export default MovementForm;
 			
 		
