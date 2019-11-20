@@ -1,0 +1,32 @@
+[
+    {
+        "model": "workout.energysystem",
+        "pk": 1,
+        "fields": {
+            "name": "Phosphagen",
+            "activation" : 30,
+            "duration": 60,
+            "recovery": 60
+	}
+    },
+    {
+        "model": "workout.energysystem",
+        "pk": 2,
+        "fields": {
+            "name": "Glycogen",
+            "activation" : 30,
+            "duration": 300,
+            "recovery": 280
+	}
+    },
+    {
+        "model": "workout.energysystem",
+        "pk": 3,
+        "fields": {
+            "name": "Oxigen",
+            "activation" : 90,
+            "duration": 9000,
+            "recovery": 1024
+	}
+    }
+]

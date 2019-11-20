@@ -3,11 +3,154 @@
 		"model": "workout.movement",
 		"pk": 1,
 		"fields": {
-			"name": "Back Squat",
+			"name": "Squat",
 			"description": "Squat loaded on traps",
 			"unilateral": "False",
 			"video": "None",
 			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 2,
+		"fields": {
+			"name": "Deadlift",
+			"description": "Lift one dead person",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 3,
+		"fields": {
+			"name": "Squat (Skater)",
+			"description": "Skate",
+			"unilateral": "True",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 4,
+		"fields": {
+			"name": "Deadlift (SDL)",
+			"description": "Hip Hinge",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "INT"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 5,
+		"fields": {
+			"name": "Overhead Press",
+			"description": "Press Up",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 6,
+		"fields": {
+			"name": "Pushup",
+			"description": "Push the earth?",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 7,
+		"fields": {
+			"name": "Walk",
+			"description": "Walk it out",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 8,
+		"fields": {
+			"name": "Run",
+			"description": "Go",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 9,
+		"fields": {
+			"name": "Sprint",
+			"description": "100",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "INT"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 10,
+		"fields": {
+			"name": "Jump (Bilateral, Vertical)",
+			"description": "Off two feet!",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 11,
+		"fields": {
+			"name": "Jump (Unilateral, Horizontal)",
+			"description": "Jump off one leg for distance. Land balanced on two",
+			"unilateral": "True",
+			"video": "None",
+			"difficulty": "INT"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 12,
+		"fields": {
+			"name": "Swim",
+			"description": "Freestyle",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "INT"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 13,
+		"fields": {
+			"name": "Bike",
+			"description": "~95rpm",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 14,
+		"fields": {
+			"name": "Kettlebell Swing",
+			"description": "HIKE!",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "INT"
 		}
 	}
 ]

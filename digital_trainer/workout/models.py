@@ -27,21 +27,6 @@ class Movement(models.Model):
     def __str__(self):
         return self.name
 
-#class StrengthMovement(Movement):
-    #TODO: Add equipment
-    #Equipment = models.ManyToManyField(Equipment)
-
-#class ConditioningMovement(Movement):
-#    bytime = models.BooleanField() # by time?
-#    value = models.IntegerField() #seconds or meters
-
-#    def __str__(self):
-#        if self.bytime():
-#            return "Conditioning Movement: " + self.name + " for " + self.value
-#            + "seconds"
-#        else:
-#            return "Conditioning Movement: " + self.name + " " + self.value 
-#            + "meters"
 
 class Exercise(models.Model):
     name = models.CharField(max_length=512)
@@ -59,12 +44,39 @@ class Exercise(models.Model):
     def __str__(self):
         return self.name
 
+class EnergySystem(models.Model):
+    name = models.CharField(max_length=512)
+    activation = models.IntegerField(default=0)
+    duration = models.IntegerField(default=30)
+    recovery = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
+class FitnessComponent(models.Model):
+    name = models.CharField(max_length=512)
+    req_rest = models.IntegerField(default=24)
+    repeat_rest = models.IntegerField(default=48)
+    energy_system = models.ManyToManyField(EnergySystem)
+
+    def __str__(self):
+        return self.name
 
 class Module(models.Model):
     name = models.CharField(max_length=512)
     exercises = models.ManyToManyField(Exercise)
     description = models.CharField(max_length=2048)
+    fitness_components = models.ManyToManyField(FitnessComponent)
+    energy_systems = models.ManyToManyField(EnergySystem)
 
     def __str__(self):
-        return self.name
+        return self._check_long_column_names
+
+class Day(models.Model):
+    date = models.DateField()
+    modules = models.ManyToManyField(Module)
+
+    def __str__(self):
+        return date
+
 
