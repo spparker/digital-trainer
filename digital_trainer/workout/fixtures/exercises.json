@@ -1,0 +1,50 @@
+[
+	{
+		"model": "workout.exercise",
+		"pk": 1,
+		"fields": {
+			"name": "Squats 3x5 (Strength)",
+			"movements": [1],
+			"description": "",
+			"sets": 3,
+			"set_rest": 0,
+			"reps": 5
+		}
+	},
+	{
+		"model": "workout.exercise",
+		"pk": 2,
+		"fields": {
+			"name": "Deadlifts 5x5 (Strength)",
+			"movements": [2],
+			"description": "",
+			"sets": 5,
+			"set_rest": 0,
+			"reps": 5
+		}
+	},
+	{
+		"model": "workout.exercise",
+		"pk": 3,
+		"fields": {
+			"name": "Press 4x5 (Strength)",
+			"movements": [5],
+			"description": "",
+			"sets": 4,
+			"set_rest": 0,
+			"reps": 5
+		}
+	},
+	{
+		"model": "workout.exercise",
+		"pk": 4,
+		"fields": {
+			"name": "Pullup 4x5 (Strength)",
+			"movements": [15],
+			"description": "",
+			"sets": 4,
+			"set_rest": 0,
+			"reps": 5
+		}
+	}
+]

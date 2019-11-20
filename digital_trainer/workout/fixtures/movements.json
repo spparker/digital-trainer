@@ -152,5 +152,27 @@
 			"video": "None",
 			"difficulty": "INT"
 		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 15,
+		"fields": {
+			"name": "Pullup",
+			"description": "Wide Pronated Grip",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "INT"
+		}
+	},
+	{
+		"model": "workout.movement",
+		"pk": 16,
+		"fields": {
+			"name": "Row",
+			"description": "Pull",
+			"unilateral": "False",
+			"video": "None",
+			"difficulty": "BEG"
+		}
 	}
 ]

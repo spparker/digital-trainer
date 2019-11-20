@@ -1,0 +1,24 @@
+[
+	{
+		"model": "workout.module",
+		"pk": 1,
+		"fields" : {
+			"name" : "Strength Day A",
+			"exercises" : [1,3],
+			"description" : "General Push Strength Exercises",
+			"fitness_components": [],
+			"energy_systems": []
+		}
+	},
+	{
+		"model": "workout.module",
+		"pk": 2,
+		"fields" : {
+			"name" : "Strength Day B",
+			"exercises" : [2,4],
+			"description" : "General Pull Strength Exercises",
+			"fitness_components": [],
+			"energy_systems": []
+		}
+	}
+]
