@@ -72,6 +72,10 @@ class Module(models.Model):
     def __str__(self):
         return self._check_long_column_names
 
+    #def exercise_names(self):
+    #    return ', '.join([e.name for e in self.exercises.all()])
+    #exercise_names.short_description = "Exercise Names"
+
 class Day(models.Model):
     date = models.DateField()
     modules = models.ManyToManyField(Module)

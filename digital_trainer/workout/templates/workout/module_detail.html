@@ -3,10 +3,17 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% for exercise in module.exercise.all %}
-	<h4>{{ exercise.name }}</h4>
-	{{ exercise.description }}
+{% for exercise in module.exercises.all %}
+	{{ exercise.name }}<br/>
 	{% empty %}
-	<p> "No modules yet"</p>
 {% endfor %}
 
+{% for fc in module.fitness_components.all %}
+	{{ fc.name }}<br/>
+	{% empty %}
+{% endfor %}
+
+{% for es in module.energy_systems.all %}
+	{{ es.name }}<br/>
+	{% empty %}
+{% endfor %}
