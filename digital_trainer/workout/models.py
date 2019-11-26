@@ -70,13 +70,37 @@ class Module(models.Model):
     energy_systems = models.ManyToManyField(EnergySystem)
 
     def __str__(self):
-        return self._check_long_column_names
+        return self.name
 
     #def exercise_names(self):
     #    return ', '.join([e.name for e in self.exercises.all()])
     #exercise_names.short_description = "Exercise Names"
 
-class Day(models.Model):
+class Microcycle(models.Model):
+    name = models.CharField(max_length=512)
+    days = models.IntegerField(default=7)
+    modules = models.ManyToManyField(Module)
+
+    def __str__(self):
+        return self.name + ' ' + str(self.days) + ' days'
+
+class Mesocycle(models.Model):
+    name = models.CharField(max_length=512)
+    microcycles = models.ManyToManyField(Microcycle)
+
+    def __str__(self):
+        return self.name
+
+class Macrocycle(models.Model):
+    name = models.CharField(max_length=512)
+    fitness_components = models.ManyToManyField(FitnessComponent)
+    days = models.IntegerField(default=90)
+    mesocycles = models.ManyToManyField(Mesocycle)
+
+    def __str__(self):
+        self.name + ' ' + str(self.days) + ' days'
+
+class TrainingDay(models.Model):
     date = models.DateField()
     modules = models.ManyToManyField(Module)
 

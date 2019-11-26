@@ -1,0 +1,122 @@
+[
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 1,
+		"fields": {
+			"name": "Aerobic Endurance",
+			"req_rest": 12,
+			"repeat_rest": 24,
+			"energy_system": [3]
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 2,
+		"fields": {
+			"name": "Anarobic Endurance",
+			"req_rest": 24,
+			"repeat_rest": 48,
+			"energy_system": [1,2]
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 3,
+		"fields": {
+			"name": "Strength",
+			"req_rest": 24,
+			"repeat_rest": 48,
+			"energy_system": [1]
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 4,
+		"fields": {
+			"name": "Power",
+			"req_rest": 24,
+			"repeat_rest": 48,
+			"energy_system": [1]
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 5,
+		"fields": {
+			"name": "Hypertrophy",
+			"req_rest": 48,
+			"repeat_rest": 72,
+			"energy_system": [1,2]
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 6,
+		"fields": {
+			"name": "Muscular Endurance",
+			"req_rest": 48,
+			"repeat_rest": 48,
+			"energy_system": [1,2]
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 7,
+		"fields": {
+			"name": "Flexability",
+			"req_rest": 0,
+			"repeat_rest": 12,
+			"energy_system": []
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 8,
+		"fields": {
+			"name": "Balance",
+			"req_rest": 0,
+			"repeat_rest": 12,
+			"energy_system": []
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 9,
+		"fields": {
+			"name": "Stability",
+			"req_rest": 0,
+			"repeat_rest": 12,
+			"energy_system": []
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 10,
+		"fields": {
+			"name": "Agility",
+			"req_rest": 24,
+			"repeat_rest": 48,
+			"energy_system": []
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 11,
+		"fields": {
+			"name": "ChangeOfDirection",
+			"req_rest": 24,
+			"repeat_rest": 48,
+			"energy_system": []
+		}
+	},
+	{
+		"model": "workout.fitnesscomponent",
+		"pk": 12,
+		"fields": {
+			"name": "Speed",
+			"req_rest": 24,
+			"repeat_rest": 48,
+			"energy_system": []
+		}
+	}
+]
