@@ -1,0 +1,10 @@
+<h1>Cycles</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<ul>
+{% for macrocycle in macrocycle_list %}
+<li><a href="/workout/cycle/{{macrocycle.id}}/">{{ macrocycle.name }}</a></li>
+{% empty %}
+	<li>No macrocycles yet.</li>
+{% endfor %}
+</ul>

@@ -1,0 +1,40 @@
+[
+	{
+		"model": "workout.microcycle",
+		"pk": 1,
+		"fields" : {
+			"name" : "General Maximum Strength",
+			"days" : 7,
+			"modules": [1,2,1]
+		}
+	},
+	{
+		"model": "workout.microcycle",
+		"pk": 2,
+		"fields": {
+			"name" : "Alternate Maximum Strength",
+			"days" : 7,
+			"modules": [2,1,2]
+		}
+	},
+	{
+		"model": "workout.mesocycle",
+		"pk": 1,
+		"fields": {
+			"name" : "Maximum Strength",
+			"microcycles": [1,2,1,2]
+		}
+	},
+	{
+		"model": "workout.macrocycle",
+		"pk": 1,
+		"fields": {
+			"name" : "Strength",
+			"fitness_components": [],
+			"days": 56,
+			"mesocycles": [1,1]
+		}
+	}
+]
+	
+

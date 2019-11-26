@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.views import generic
 
-from .models import Movement, Exercise, Module
+from .models import Movement, Exercise, Module, Macrocycle
 from .serializers import MovementSerializer, ExerciseSerializer, ModuleSerializer
 from rest_framework import generics
 
@@ -73,3 +73,16 @@ class ModuleListView(generic.ListView):
     def get_queryset(self):
         return Module.objects.all()
 
+class CycleDetailView(generic.DetailView):
+    model = Macrocycle
+    template_name = 'workout/cycle_detail.html'
+
+    def get_queryset(self):
+        return Macrocycle.objects.all()
+
+class CycleListView(generic.ListView):
+    model = Macrocycle
+    template_name = 'workout/cycle_list.html'
+
+    def get_queryset(self):
+        return Macrocycle.objects.all()

@@ -21,6 +21,10 @@ urlpatterns = [
              name='module_detail'),
         path('workout/module/', views.ModuleListView.as_view(),
              name='module_list'),
+        path('workout/cycle/<int:pk>/', views.CycleDetailView.as_view(),
+             name='cycle_detail'),
+        path('workout/cycle/', views.CycleListView.as_view(),
+             name='cycle_list'),
         ## API
         path('api/movement/', views.MovementListCreate.as_view() ),
         path('api/exercise/', views.ExerciseListCreate.as_view() ),

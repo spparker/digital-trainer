@@ -1,17 +1,7 @@
-from models import Day, FitnessComponent, EnergySystem, Module
-
-fit_com = ['Flexability', 'Balance', 'Stability', 'Aerobic', 'Anarobic',
-           'Endurance', 'Power', 'Strength']
-
-nrg_sys = ['Phosphagen', 'Glycogen', 'Oxigen']
+from models import Day, FitnessComponent, EnergySystem, Module, Microcycle, Mesocycle, Macrocycle
 
 
-days = 7
-my_coms = [fit_com[7], fit_com[2], fit_com[3]]
-
-
-for day in range(0,days):
-    print("Day "+str(day))
-
-
-
+#def create_microcycle(components FitnessComponent):
+#    my_cycle = new Microcycle()
+#    for fitcomp in components:
+#        if fitcomp.name = 'Strength':

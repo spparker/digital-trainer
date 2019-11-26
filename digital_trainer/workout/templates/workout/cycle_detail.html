@@ -1,0 +1,9 @@
+<h1>{{ macrocycle.name }}</h1>
+<h3>{{ macrocycle.days }} Days</h3>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{% for meso in macrocycle.mesocycles.all %}
+	{{ meso.name }}<br/>
+	{% empty %}
+{% endfor %}
