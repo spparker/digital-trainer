@@ -9,6 +9,7 @@ Athlete
 Trainer
 Captain
 Pod Leader
+Admin (can add movements/etc)
 
 The system allows coordination through a Trainer <--> Athlete relationship but also Athlete <--> Athlete relationships via Team and Pod groupings. Ultimate Disc athletes are the targeted end users of the initial trianing system. A likely framework will involve the general web application interacting with any number of sport specific programming packages. 
 
