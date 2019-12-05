@@ -1,4 +1,4 @@
-Django==2.2.4
+Django==2.2.8
 django-polls==0.1
 django-polymorphic==2.1.2
 djangorestframework==3.10.3
