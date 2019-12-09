@@ -86,6 +86,8 @@ class Microcycle(models.Model):
 
 class Mesocycle(models.Model):
     name = models.CharField(max_length=512)
+    fitness_components = models.ManyToManyField(FitnessComponent)
+    days = models.IntegerField(default=28)
     microcycles = models.ManyToManyField(Microcycle)
 
     def __str__(self):
@@ -93,8 +95,7 @@ class Mesocycle(models.Model):
 
 class Macrocycle(models.Model):
     name = models.CharField(max_length=512)
-    fitness_components = models.ManyToManyField(FitnessComponent)
-    days = models.IntegerField(default=90)
+    days = models.IntegerField(default=180)
     mesocycles = models.ManyToManyField(Mesocycle)
 
     def __str__(self):
