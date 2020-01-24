@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 from django.views import generic
 
-from .models import Movement, Exercise, Module, Macrocycle
-from .serializers import MovementSerializer, ExerciseSerializer, ModuleSerializer
+from .models import Movement, Exercise, Module, Macrocycle, Microcycle
+from .serializers import MovementSerializer, ExerciseSerializer, ModuleSerializer, MicrocycleSerializer
 from rest_framework import generics
 
 # Full Details for a Movement
@@ -38,6 +38,10 @@ class ExerciseListCreate(generics.ListCreateAPIView):
 class ModuleListCreate(generics.ListCreateAPIView):
     queryset = Module.objects.all()
     serializer_class = ModuleSerializer
+
+class MicrocycleListCreate(generics.ListCreateAPIView):
+    queryset = Microcycle.objects.all()
+    serializer_class = MicrocycleSerializer
 
 class ExerciseDetailView(generic.DetailView):
     model = Exercise

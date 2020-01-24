@@ -29,4 +29,5 @@ urlpatterns = [
         path('api/movement/', views.MovementListCreate.as_view() ),
         path('api/exercise/', views.ExerciseListCreate.as_view() ),
         path('api/module/', views.ModuleListCreate.as_view() ),
+        path('api/microcycle/', views.MicrocycleListCreate.as_view() ),
 ]

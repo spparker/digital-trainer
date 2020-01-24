@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "# Introduction DSTS is a personal and team workout planning and feedback system. It is intended to be used as a free resource with open plan sharing and access to aggregate anonymous statistical information.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "react-router-dom": "^5.1.2",
+    "reload": "^3.0.4"
+  },
   "devDependencies": {
     "@babel/core": "^7.7.2",
     "@babel/preset-env": "^7.7.1",
-    "@babel/preset-react": "^7.7.0",
+    "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "cypress": "^3.6.1",
@@ -21,8 +24,8 @@
   "scripts": {
     "flush": "python ./digital_trainer/manage.py flush --no-input",
     "e2e": "cypress open --project ./digital_trainer/frontend/",
-    "dev": "webpack --mode development ./digital_trainer/frontend/src/index.js --output ./digital_trainer/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./digital_trainer/frontend/src/index.js --output ./digital_trainer/frontend/static/frontend/main.js"
+    "dev": "webpack --mode development ./digital_trainer/frontend/src/index.jsx --output ./digital_trainer/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./digital_trainer/frontend/src/index.jsx --output ./digital_trainer/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",

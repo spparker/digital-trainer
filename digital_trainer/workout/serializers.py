@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from workout.models import Movement, Exercise, Module
+from workout.models import Movement, Exercise, Module, Microcycle, Mesocycle, Macrocycle
 
 class MovementSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,3 +18,7 @@ class ModuleSerializer(serializers.ModelSerializer):
         model = Module
         fields = '__all__'
 
+class MicrocycleSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = Microcycle
+         fields = '__all__'

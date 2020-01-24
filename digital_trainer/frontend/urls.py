@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index ),
-    path('movement', views.movement),
+    path('module', views.movement)
 ]
 

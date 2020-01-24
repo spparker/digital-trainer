@@ -1,0 +1,14 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import DataProvider from "./DataProvider";
+import Table from "./Table";
+
+const ModuleApp = () => (
+	<React.Fragment>
+	 <DataProvider endpoint="api/module/" render={data => <Table data={data} />} />
+	</React.Fragment>
+);
+
+const wrapper = document.getElementById("app");
+
+wrapper ? ReactDOM.render(<ModuleApp />, wrapper) : null;

@@ -2,12 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import DataProvider from "./DataProvider";
 import Table from "./Table";
-import Form from "./MovementForm";
 
 const App = () => (
 	<React.Fragment>
-	 <DataProvider endpoint="api/movement/" render={data => <Table data={data} />} />
-	 <Form endpoint="api/movement/" />
+	 <DataProvider endpoint="api/module/" render={data => <Table data={data} />} />
 	</React.Fragment>
 );
 
