@@ -30,7 +30,7 @@ class Movement(models.Model):
 
 class Exercise(models.Model):
     name = models.CharField(max_length=512)
-    movements = models.ManyToManyField(Movement)
+    movement_intensity_velocity_list = models.CharField(max_length=2048) #[[Movement_id, percent_effort, velocity]]
     description = models.CharField(max_length=2048)
     sets = models.IntegerField()
     set_rest = models.IntegerField(default=0) #seconds
@@ -44,49 +44,68 @@ class Exercise(models.Model):
     def __str__(self):
         return self.name
 
+    def set_movement_intensity_veloicty_list(self, x):
+        self.movement_intensity_velocity_list = json.dumps(x)
+
+    def get_movement_intensity_velocity_list(self):
+        return json.loads(self.movement_intensity_velocity_list)
+
 class EnergySystem(models.Model):
     name = models.CharField(max_length=512)
     activation = models.IntegerField(default=0)
     duration = models.IntegerField(default=30)
-    recovery = models.IntegerField(default=0)
+    recovery_rec = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
 
 class FitnessComponent(models.Model):
     name = models.CharField(max_length=512)
-    req_rest = models.IntegerField(default=24)
-    repeat_rest = models.IntegerField(default=48)
-    energy_system = models.ManyToManyField(EnergySystem)
+    req_velocity = models.IntegerField(default=50)
+    intensity_min = models.IntegerField(default=50)
+    intensity_max = models.IntegerField(default=75)
 
     def __str__(self):
         return self.name
 
 class Module(models.Model):
     name = models.CharField(max_length=512)
-    exercises = models.ManyToManyField(Exercise)
+    exercises = models.CharField(max_length=2048)
+    exercise_rest = models.IntegerField(default=0)
     description = models.CharField(max_length=2048)
     fitness_components = models.ManyToManyField(FitnessComponent)
     energy_systems = models.ManyToManyField(EnergySystem)
+    recovery_time = models.IntegerField(default=24)
+    repeat_time = models.IntegerField(default=48)
 
     def __str__(self):
         return self.name
+
+    def set_exercises(self, x):
+        self.exercises = json.dumps(x)
+
+    def get_exercises(self):
+        return json.loads(self.exercises)
 
     #def exercise_names(self):
     #    return ', '.join([e.name for e in self.exercises.all()])
     #exercise_names.short_description = "Exercise Names"
 
-class Microcycle(models.Model):
-    name = models.CharField(max_length=512)
-    days = models.IntegerField(default=7)
+class Day(models.Model):
+    number = models.IntegerField()
     modules = models.ManyToManyField(Module)
 
+class Microcycle(models.Model):
+    name = models.CharField(max_length=512)
+    days = models.ManyToManyField(Day)
+
     def __str__(self):
-        return self.name + ' ' + str(self.days) + ' days'
+        return self.name + ':  ' + str(self.days)
 
 class Mesocycle(models.Model):
     name = models.CharField(max_length=512)
     fitness_components = models.ManyToManyField(FitnessComponent)
+    energy_systems = models.ManyToManyField(EnergySystem)
     days = models.IntegerField(default=28)
     microcycles = models.ManyToManyField(Microcycle)
 
