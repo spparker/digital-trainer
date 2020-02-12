@@ -1,6 +1,6 @@
 certifi==2019.9.11
 coverage==4.5.4
-Django==2.2.8
+Django==2.2.10
 django-polls==0.1.0
 django-polymorphic==2.1.2
 djangorestframework==3.10.3
