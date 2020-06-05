@@ -1,6 +1,6 @@
 asgiref==3.2.3
 coverage==4.5.4
-Django==3.0.3
+Django==3.0.7
 django-polls==0.1
 django-polymorphic==2.1.2
 djangorestframework==3.10.3
